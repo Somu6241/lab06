@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Format Checker Report</title>
+    <style>
+        /* CSS style for centering the content and grey background */
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Format Checker Report</h1>
+        <p>
+            {% if password_passed %}
+                Password passed the requirements.
+            {% else %}
+                Password does not meet the requirements. Please try again.
+            {% endif %}
+        </p>
+    </div>
+</body>
+</html>

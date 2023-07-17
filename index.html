@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Format Checker</title>
+    <style>
+        /* CSS style for centering the content and grey background */
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Format Checker</h1>
+        <h4> Want to check Strength of your password!!!!</h4>
+        <p>Please enter the details below</p>
+        <p>your password must contain:</p>
+        <p> * Uppercase letter</p>
+        <p> * lowercase letter</p>
+        <p> * Number at the end</p>
+        <form action="/" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required><br>
+            <input type="submit" value="Submit">
+        </form>
+        {% if password_report %}
+        <p>{{ password_report }}</p>
+        {% endif %}
+        {% if requirements_not_met %}
+        <ul>
+            {% for requirement in requirements_not_met %}
+            <li>{{ requirement }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
